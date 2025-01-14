@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logout</title>
+    <link href="{% static 'css/logout.css' %}" rel="stylesheet" type="text/css">
+
+    </body >
+    
+       <div>
+        {% block content %}
+        <h2>Confirm Logout</h2>
+
+        <form method="post">
+            {% csrf_token %}
+        <button type="submit">Logout</button> 
+            {% comment %} <a href="{% url 'Facebook' %}">logout</a>  <!-- //take me to loging page/template --> {% endcomment %}
+            <a href="{% url 'home' %}">Cancel</a>
+        </form>
+        {% endblock %}
+
+     </div>     
+            
+</body>
+
+</html>
